@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:ref="@{/styleDarkTheme.css}">
+
+</head>
+<body>
+  <h1>Owner list</h1>
+
+    <table th:each="owner: ${owners}">
+        <tr>
+            <td th:text="${owner.name}"></td>
+            <td th:text="${owner.marketCount}"></td>
+        </tr>
+    </table>
+</body>
+</html>

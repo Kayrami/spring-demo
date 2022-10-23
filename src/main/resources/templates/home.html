@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html hmlns="http://www.w3.org/1999/html"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Taco Cloud</title>
+        <meta name="description" content="Taco">
+        <meta name="author" content="deckov@gk21.ru">
+        <link rel="shortcut icon" href="images/taco.ico" type="image/x-icon">
+    </head>
+
+    <body>
+    <header><h1 th:text="#{home.welcome}">Welcome text<strong>debt</strong><a href="#list">to list</a></h1></header>
+    <hr>
+    <main>
+    <aside>
+       <div th:each="value: ${list}">
+           <p th:text="${value}">test</p>
+       </div>
+    </aside>
+
+        <nav>
+            <div th:object="${map}">
+                <ul>
+                    <li><a th:text="*{value1}">ref1</a></li>
+                    <li><a th:text="*{value2}">ref2</a></li>
+                    <li><a th:text="*{value3}">ref3</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <p>This is text <strong>sheet</strong></p>
+
+        <img th:src="@{/images/TacoCloud.pngf}" alt="Image debt"/>
+
+        <p>Mozilla, мы являемся мировым сообществом</p>
+
+
+        <ol id="list">
+
+            <li>teeerererat</li>
+            <li>teat</li>
+            <li>teat</li>
+        </ol>
+
+        <p>работающих вместе ... </p>
+    </main>
+    </body>
+
+    <a href="design" target="_blank">Create taco</a>
+    <a href="mailto:deckov@gk21.ru? body=ff" >Send</a>
+    <input type="text" disabled>
+
+    <a th:href="@{/user(name=${taco.name})}">show me</a>
+    <a th:href="@{/{path}(path=${'design'})}">show me</a>
+    <form method="post">
+        <div>
+            <button>Click me!</button>
+        </div>
+    </form>
+    <address>deckov@gk21.ru</address>
+</html>
